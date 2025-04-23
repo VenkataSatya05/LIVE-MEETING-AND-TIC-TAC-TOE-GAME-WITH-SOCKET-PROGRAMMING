@@ -198,4 +198,24 @@ Follow these steps to set up and run the Tic-Tac-Toe game on your local machine.
 - The game assumes a stable network; connection issues may cause errors.
 - The board is 0-indexed, so valid inputs are 0, 1, or 2.
 - Replace YOUR-USERNAME in the clone command with your actual GitHub username.
+
+## ✨ Team
+
+Thanks to these contributors:
+
+     Venkata Satya Alajangi
+
+     Kolla Lokesh 
+
+     Goli Surya Teja 
+
+     Rama Krishna Prasad 
+
+     Project Guide: Ms. Ganga gowri
+
+## 🙌 Contributing
+
+We welcome contributions! Please read our Contributing Guidelines and submit pull requests to enhance features or fix issues.
+
+Built with 💻 by Group-12, Batch A, at Amrita School of Artificial Intelligence, Amrita Vishwa Vidyapeetham.
   
