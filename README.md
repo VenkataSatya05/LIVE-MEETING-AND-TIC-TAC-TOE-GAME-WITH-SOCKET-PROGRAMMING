@@ -102,9 +102,7 @@ Follow these steps to set up and run the Live Meeting system on your local machi
 
 ---
 
-## README for Networked Tic-Tac-Toe Game
 
-```markdown
 # Networked Tic-Tac-Toe Game
 
 ## 📌 Introduction
@@ -163,4 +161,40 @@ Follow these steps to set up and run the Tic-Tac-Toe game on your local machine.
 2. **Clone the Repository**:
    ```bash
    git clone https://github.com/YOUR-USERNAME/TicTacToe-Networked.git
+
+3. **No Dependencies: **:
+   - The game uses Python’s standard library (socket, threading), so no additional installations are needed.
    
+4. **Run the Game**:
+   - Host the Game (Player 1): Execute the Player 1 script to start the server:
+   ```bash
+   python player1.py
+
+- Ensure the script uses:
+  ```bash
+     game = TicTacToe()
+     game.host_game("localhost", 9999)
+  
+- Connect as Client (Player 2): Execute the Player 2 script to connect to the server:
+  ```bash
+     python player2.py
+
+- Ensure the script uses:
+  ```bash
+     game = TicTacToe()
+  game.connect_to_game("localhost", 9999)
+  
+
+5. **Play the Game**:
+   - Enter moves as row,column (e.g., 0,1 for row 0, column 1).
+   - Valid inputs are 0, 1, or 2 for both row and column.
+
+
+## 🧠 Remember
+
+- Start the Player 1 script (server) before running the Player 2 script (client).
+- Use the same port (e.g., 9999) for both players.
+- The game assumes a stable network; connection issues may cause errors.
+- The board is 0-indexed, so valid inputs are 0, 1, or 2.
+- Replace YOUR-USERNAME in the clone command with your actual GitHub username.
+  
