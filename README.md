@@ -166,7 +166,8 @@ Follow these steps to set up and run the Tic-Tac-Toe game on your local machine.
    - The game uses Python’s standard library (socket, threading), so no additional installations are needed.
    
 4. **Run the Game**:
-   - Host the Game (Player 1): Execute the Player 1 script to start the server:
+   
+- Host the Game (Player 1): Execute the Player 1 script to start the server:
    ```bash
       python player1.py
 
