@@ -98,4 +98,69 @@ Follow these steps to set up and run the Live Meeting system on your local machi
 - A webcam and microphone are required for video and audio functionality.
 - The server and client must be on the same network for local testing.
 - Replace YOUR-USERNAME in the clone command with your actual GitHub username.
+
+
+---
+
+## README for Networked Tic-Tac-Toe Game
+
+```markdown
+# Networked Tic-Tac-Toe Game
+
+## 📌 Introduction
+
+The **Networked Tic-Tac-Toe Game** is a Python-based application that enables two players to play Tic-Tac-Toe over a network using socket programming. One player hosts the game as the server (playing as "X"), while the other connects as the client (playing as "O"). The game features a text-based interface, robust move validation, and real-time win/tie detection, with seamless communication facilitated by threading.
+
+**Key Features:**
+- **Network Play**: Supports two players over a TCP connection using `socket`.
+- **Real-Time Interaction**: Uses `threading` for simultaneous move inputs and opponent updates.
+- **Move Validation**: Ensures valid moves (within 0-2 range, empty spaces) to prevent errors.
+- **Game Logic**: Detects wins (rows, columns, diagonals) and ties after 9 moves.
+- **Simple Interface**: Displays the 3x3 board in the console with clear formatting.
+
+This project showcases the power of socket programming in creating interactive, multiplayer gaming experiences.
+
+## 🛠 Tech Stack
+
+| *Layer*          | *Tools/Frameworks*         |
+|-------------------|----------------------------|
+| Programming       | Python                     |
+| Networking        | socket                     |
+| Concurrency       | threading                  |
+
+## 🏛️ Overall Workflow
+
+1. **Game Setup**: Player 1 hosts the game (`host_game`) on a specified host and port, while Player 2 connects (`connect_to_game`).
+2. **Role Assignment**: Player 1 is assigned "X", and Player 2 is assigned "O".
+3. **Move Exchange**: Players take turns entering moves (row, column) via the console, which are sent over the network to update the opponent’s board.
+4. **Validation and Update**: The `check_valid_move` method verifies move validity, and `apply_move` updates the board state.
+5. **Game Outcome**: The game checks for a win (`check_if_won`) or tie (`counter == 9`) after each move, ending when a condition is met.
+
+![Workflow Diagram Placeholder]
+*(Note: Include a diagram showing client-server connections, move exchange, and board updates for clarity.)*
+
+## 📦 Libraries Used
+
+- **socket**: For TCP-based network communication.
+- **threading**: For handling concurrent move processing.
+- **built-in**: No external dependencies required.
+
+## 🏃‍♂️ Getting Started
+
+Follow these steps to set up and run the Tic-Tac-Toe game on your local machine.
+
+### 📋 Prerequisites
+
+- Python 3.8 or higher.
+- Two machines or terminals (for host and client).
+- Git for repository cloning.
+
+### 🧱 Setting Up Your Development Environment
+
+1. **Install Git**:
+   - Download and install Git from [git-scm.com](https://git-scm.com/).
+
+2. **Clone the Repository**:
+   ```bash
+   git clone https://github.com/YOUR-USERNAME/TicTacToe-Networked.git
    
