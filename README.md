@@ -162,7 +162,7 @@ Follow these steps to set up and run the Tic-Tac-Toe game on your local machine.
    ```bash
    git clone https://github.com/YOUR-USERNAME/TicTacToe-Networked.git
 
-3. **No Dependencies: **:
+3. **No Dependencies**:
    - The game uses Python’s standard library (socket, threading), so no additional installations are needed.
    
 4. **Run the Game**:
