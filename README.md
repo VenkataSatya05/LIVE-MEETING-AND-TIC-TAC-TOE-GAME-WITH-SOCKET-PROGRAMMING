@@ -170,17 +170,17 @@ Follow these steps to set up and run the Tic-Tac-Toe game on your local machine.
    ```bash
    python player1.py
 
-- Ensure the script uses:
-  ```bash
+   - Ensure the script uses:
+   ```bash
      game = TicTacToe()
      game.host_game("localhost", 9999)
   
-- Connect as Client (Player 2): Execute the Player 2 script to connect to the server:
-  ```bash
+   - Connect as Client (Player 2): Execute the Player 2 script to connect to the server:
+    ```bash
      python player2.py
 
-- Ensure the script uses:
-  ```bash
+   - Ensure the script uses:
+   ```bash
      game = TicTacToe()
      game.connect_to_game("localhost", 9999)
   
