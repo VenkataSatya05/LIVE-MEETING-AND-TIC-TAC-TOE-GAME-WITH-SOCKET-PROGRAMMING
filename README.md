@@ -79,23 +79,23 @@ Follow these steps to set up and run the Live Meeting system on your local machi
    pip install opencv-python pillow pyautogui sounddevice numpy
 
 4. **Run the Application**:
-   -Execute the server script to start listening for client connections:
+   - Execute the server script to start listening for client connections:
    ```bash
    python server.py
 
 5. **Default Teacher Credentials**:
-   -On another machine or terminal, execute the client script to connect to the server:
+   - On another machine or terminal, execute the client script to connect to the server:
    ```bash
    python client.py
    
 6. **Use the GUI**:
-   -On the server, toggle screen, video, or audio sharing to view client streams.
-   -On the client, start/stop sharing features to send data to the server.
+   - On the server, toggle screen, video, or audio sharing to view client streams.
+   - On the client, start/stop sharing features to send data to the server.
 
 ###  🧠 Remember
--Ensure the server is running before starting the client.
--Use the correct IP address and ports (5051 for screen, 9999 for video, 5052 for audio) in the client code.
--A webcam and microphone are required for video and audio functionality.
--The server and client must be on the same network for local testing.
--Replace YOUR-USERNAME in the clone command with your actual GitHub username.
+- Ensure the server is running before starting the client.
+- Use the correct IP address and ports (5051 for screen, 9999 for video, 5052 for audio) in the client code.
+- A webcam and microphone are required for video and audio functionality.
+- The server and client must be on the same network for local testing.
+- Replace YOUR-USERNAME in the clone command with your actual GitHub username.
    
