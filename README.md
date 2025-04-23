@@ -1,59 +1,67 @@
 ﻿# LIVE-MEETING-AND-TIC-TAC-TOE-GAME-WITH-SOCKET-PROGRAMMING
 
- # Attendance System with Face Recognition
+# Live Meeting with Socket Programming
 
 ## 📌 Introduction
 
-The **Attendance System with Face Recognition** is a Python-based application designed to automate attendance tracking using facial recognition technology. Featuring an intuitive graphical user interface (GUI) built with Tkinter, the system leverages computer vision to provide a secure, scalable, and user-friendly solution for educational institutions, offices, and events. It uses a folder-based database structure for efficient management of student images and attendance records, ensuring flexibility and ease of use.
+The **Live Meeting with Socket Programming** is a Python-based application designed to facilitate real-time collaboration through screen sharing, video streaming, and audio sharing. Featuring an intuitive graphical user interface (GUI) built with Tkinter, the system leverages socket programming to establish robust communication channels between a server and multiple clients. This enables seamless data exchange for remote meetings, making it ideal for educational institutions, corporate environments, and virtual events.
 
 **Key Features:**
-- **Facial Recognition**: Accurately identifies students using the `face_recognition` library for real-time attendance marking.
-- **GUI Interface**: Tkinter-based interface for seamless student registration, attendance capture, and teacher management.
-- **Student Management**: Supports student registration, image capture, and attendance tracking, with teacher controls for viewing records and managing access.
-- **Security Features**: Allows teachers to block/unblock camera access to prevent attendance malpractice.
-- **Scalable Database**: Stores images and records in folders (`student_images`, `attendance_images`, `attendance_records.txt`) for dynamic scalability.
-- **Real-Time Processing**: Captures and processes facial data instantly for efficient attendance monitoring.
+- **Screen Sharing**: Captures and transmits the user's screen in real-time using PIL and socket communication.
+- **Video Streaming**: Streams webcam video using OpenCV for face-to-face interaction.
+- **Audio Sharing**: Transmits microphone audio using the `sounddevice` library for clear communication.
+- **GUI Interface**: Tkinter-based interface for easy control of sharing features (start/stop toggles).
+- **Real-Time Communication**: Socket programming ensures low-latency data exchange.
+- **Scalability**: Supports multiple concurrent connections for versatile meeting scenarios.
 
-This system enhances accuracy, reduces manual errors, and provides a robust platform for modern attendance management.
+This system enhances remote collaboration by providing a dynamic, interactive platform for real-time communication.
 
 ## 🛠 Tech Stack
 
-| *Layer*          | *Tools/Frameworks*         |
-|-------------------|----------------------------|
-| Frontend (GUI)    | Tkinter                    |
-| Computer Vision   | OpenCV                     |
-| Facial Recognition| face_recognition           |
-| Image Processing  | PIL (Pillow)               |
-| Database          | Folder-based (text files)  |
+| *Layer*            | *Tools/Frameworks*         |
+|---------------------|----------------------------|
+| Frontend (GUI)      | Tkinter                    |
+| Computer Vision     | OpenCV                     |
+| Image Processing    | PIL (Pillow), PyAutoGUI    |
+| Audio Processing    | sounddevice                |
+| Networking          | socket                     |
+| Concurrency         | threading                  |
 
 ## 🏛️ Overall Workflow
 
-1. **Login/Registration**: Students register with a username and password, stored in `student_database.txt`. Teachers use default credentials (`teacher`, `teacher@123`).
-2. **Image Capture**: Students capture facial images, saved in the `student_images` folder.
-3. **Attendance Marking**: Students select a course and faculty, capture an image, and the system verifies it against the registered image using facial recognition.
-4. **Teacher Controls**: Teachers view attendance records, student details, and images, delete students, and manage camera access via `blocked_images.txt`.
-5. **Output**: Attendance records are saved in `attendance_records.txt`, with visual feedback provided through the GUI.
+1. **Server Setup**: The server initializes three sockets for screen, video, and audio sharing, listening on distinct ports (5051, 9999, 5052).
+2. **Client Connection**: Clients connect to the server using the specified IP and ports, establishing communication channels.
+3. **Data Sharing**:
+   - **Screen**: Clients capture and send resized screen images; the server displays them in a Tkinter label.
+   - **Video**: Clients stream webcam frames; the server displays them using OpenCV.
+   - **Audio**: Clients send microphone audio chunks; the server plays them using `sounddevice`.
+4. **GUI Control**: Users toggle sharing features (screen, video, audio) via Tkinter buttons on both server and client interfaces.
+5. **Termination**: Closing the GUI prompts confirmation, shuts down sockets, and terminates threads.
 
 ![Workflow Diagram Placeholder]
-*(Note: Include a diagram showing login, image capture, recognition, and record storage for clarity.)*
+*(Note: Include a diagram showing server-client connections, data streams, and GUI interactions for clarity.)*
 
 ## 📦 Libraries Used
 
 - **Tkinter**: For the graphical user interface.
-- **OpenCV**: For image acquisition and processing.
-- **face_recognition**: For facial feature extraction and comparison.
-- **Pillow (PIL)**: For image handling and display in the GUI.
-- **datetime**: For timestamping attendance records.
-- **os**: For file and folder management.
+- **OpenCV**: For capturing and displaying video streams.
+- **PIL (Pillow)**: For handling and transmitting screen images.
+- **PyAutoGUI**: For screen capture in the client application.
+- **sounddevice**: For recording and playing audio streams.
+- **socket**: For TCP-based network communication.
+- **threading**: For concurrent handling of screen, video, and audio streams.
+- **pickle**: For serializing video frame data.
+- **struct**: For packing/unpacking data sizes in network communication.
+- **numpy**: For processing audio data arrays.
 
 ## 🏃‍♂️ Getting Started
 
-Follow these steps to set up and run the Attendance System on your local machine.
+Follow these steps to set up and run the Live Meeting system on your local machine.
 
 ### 📋 Prerequisites
 
 - Python 3.8 or higher.
-- A webcam for image capture.
+- A webcam and microphone for video and audio sharing.
 - Git for repository cloning.
 
 ### 🧱 Setting Up Your Development Environment
@@ -63,4 +71,31 @@ Follow these steps to set up and run the Attendance System on your local machine
 
 2. **Clone the Repository**:
    ```bash
-   git clone https://github.com/YOUR-USERNAME/Attendance-System-Face-Recognition.git
+   git clone https://github.com/YOUR-USERNAME/Live-Meeting-Socket-Programming.git
+   
+3. **Install Dependencies**:
+   - Navigate to the project directory and install required libraries:
+   ```bash
+   pip install opencv-python pillow pyautogui sounddevice numpy
+
+4. **Run the Application**:
+   -Execute the server script to start listening for client connections:
+   ```bash
+   python server.py
+
+5. **Default Teacher Credentials**:
+   -On another machine or terminal, execute the client script to connect to the server:
+   ```bash
+   python client.py
+   
+6. **Use the GUI**:
+   -On the server, toggle screen, video, or audio sharing to view client streams.
+   -On the client, start/stop sharing features to send data to the server.
+
+###  🧠 Remember
+-Ensure the server is running before starting the client.
+-Use the correct IP address and ports (5051 for screen, 9999 for video, 5052 for audio) in the client code.
+-A webcam and microphone are required for video and audio functionality.
+-The server and client must be on the same network for local testing.
+-Replace YOUR-USERNAME in the clone command with your actual GitHub username.
+   
