@@ -182,7 +182,7 @@ Follow these steps to set up and run the Tic-Tac-Toe game on your local machine.
 - Ensure the script uses:
   ```bash
      game = TicTacToe()
-  game.connect_to_game("localhost", 9999)
+     game.connect_to_game("localhost", 9999)
   
 
 5. **Play the Game**:
